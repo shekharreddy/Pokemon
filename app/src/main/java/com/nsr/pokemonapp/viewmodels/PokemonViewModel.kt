@@ -81,7 +81,7 @@ class PokemonViewModel(private val apiHelper: APIHelper) : ViewModel() {
                 add(
                     PokemonItem(
                         response.name.replaceFirstChar { it.uppercase() },
-                        response.sprites.back_default,
+                        response.sprites.getImageURL(),
                         response.types.joinToString { it.type.name.replaceFirstChar { type -> type.uppercase() } },
                         response.abilities.joinToString { it.ability.name.replaceFirstChar { type -> type.uppercase() } },
                         getStatsDetails(response.stats)
